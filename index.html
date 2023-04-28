@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+         <title>Formulario compromiso CUIDATE, CUIDAME</title>
+    <style>
+      input[type="text"]#nombre {
+        width: 600px;
+        font-size: 16px;
+      }    
+      body {
+        border: 0.1cm solid black;
+        padding: 1.5cm;
+      }
+      form {
+        max-width: 800px;
+        margin: auto;
+      }
+
+      fieldset {
+        border: 1px solid #ccc;
+        padding: 10px;
+        margin-bottom: 20px;
+      }
+
+      legend {
+        font-weight: bold;
+        font-size: 1.2em;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 5px;
+      }
+
+      select {
+        margin-left: 20px;
+      }
+
+      img#foto-cargada {
+        max-width: 75%;
+        margin-top: 10px;
+      }
+
+      .botones {
+        margin-top: 50px;
+        text-align: center;
+      }
+
+      button {
+        background-color: #4CAF50;
+        color: green;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-right: 10px;
+      }
+
+      button:hover {
+        background-color: #3e8e41;
+      }
+    </style>
+  </head>
+  <body>
+    <form>
+     <table border="1" cellpadding="0" cellspacing="0" style="height:90px; width:800px; border: 0.2px solid #ccc">
+                <tbody>
+                                <tr>
+                                                <td rowspan="2" style="height:80px; width:570px"><img alt="Logo de mi empresa" src=https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Logo_Cerrej%C3%B3n.jpg/320px-Logo_Cerrej%C3%B3n.jpg style="float: left; height:153px; width:300px" /><img alt="" src=https://i.postimg.cc/X7zZv6sF/zyro-image.png style="border-style:solid; border-width:0px; float:right; height:55px; width:150px" /></td>
+                                                <td style="height:60px; text-align:center; width:330px"><span style="font-size:16px"><strong>FORMULARIO DIGITAL DE VERIFICACION DE ANALISIS DE RIESGOS EN CAMPO - SUPERINTENDENCIA DE CAMMEC</strong></span></td>
+                                </tr>
+                                <tr>
+                                                <td style="height:20px; text-align:center; width:330px">
+                                                <h4><span style="font-size:12px">VERSION 001</span></h4>
+
+                                                <h4><span style="font-size:12px">FECHA VALIDACION&nbsp; ABRIL-2023</span></h4>
+                                                </td>
+                                </tr>
+                </tbody>
+</table>
+      <fieldset>
+        <legend><strong>Datos personales</strong></legend>
+        <label for="nombre">Nombre:</label>
+        <select size="1" name="D5" style="border:0px solid #CCFFFF; font-family: Arial; color: #000000; font-weight:bold">
+                <option>SELECIONE SU NOMBRE EN LISTA</option>
+                <option>Aldo Bermudez</option>
+                <option>Andres Argumedo</option>
+                <option>Breiner Herrera</option>
+                <option>Carlos Parra</option>
+                <option>Chaneme</option>
+                <option>Charles Rios</option>
+                <option>Comunicaciones</option>
+                <option>Contratista</option>
+                <option>Darwin Castañeda</option>
+                <option>Deivi Duran</option>
+                <option>Fabio Salgado</option>
+                <option>Gecolsa</option>
+                <option>Haniber Maestre</option>
+                <option>Hector Arce</option>
+                <option>Hernan Fuente</option>
+                <option>Hidelfonso Fragoso</option>
+                <option>Jasser Alvarez</option>
+                <option>Jorge Vizcaino</option>
+                <option>Jose Fernandez</option>
+                <option>Jose Velasquez</option>
+                <option>Lajonell Granados</option>
+                <option>Luis Peralta</option>
+                <option>Maiker Gomez</option>
+                <option>Mario Alonso</option>
+                <option>Masa Aire</option>
+                <option>Masa Cabina</option>
+                <option>Mauricio Contreras</option>
+                <option>Misael Cantillo</option>
+                <option>Neider Arango</option>
+                <option>Nelson Mendoza</option>
+                <option>Onis Curvelo</option>
+                <option>Pablo Padilla</option>
+                <option>Pablo Ruiz</option>
+                <option>Piter Moreu</option>
+                <option>Reinaldo Palencia</option>
+                <option>Ronald Benitez</option>
+                <option>Ruben Miranda</option>
+                <option>Sergio Guerra</option>
+                <option>Uniles Sierra</option>
+                <option>Victor Cuello</option>
+                <option>Victor Molina</option>
+                <option>Villey Sierra</option>
+                <option>Wilberto Borja</option>
+                <option>William Alvarado</option>
+                <option>Wilmer Martinez</option>
+                </select>
+        <br><br>
+
+         <p><strong>Fecha actual:</strong> <span id="fecha"></span></p>
+         <p><strong>Hora actual:</strong> <span id="hora"></span></p>
+
+    <script>
+      // Función para obtener la fecha y hora actual y actualizarla cada segundo
+      function actualizarFechaHora() {
+        var fechaActual = new Date();
+        var dia = fechaActual.getDate();
+        var mes = fechaActual.getMonth() + 1;
+        var anio = fechaActual.getFullYear();
+        var hora = fechaActual.getHours();
+        var minutos = fechaActual.getMinutes();
+        var segundos = fechaActual.getSeconds();
+
+        // Agregar un cero a la izquierda si el número es menor que 10
+        dia = dia < 10 ? "0" + dia : dia;
+        mes = mes < 10 ? "0" + mes : mes;
+        hora = hora < 10 ? "0" + hora : hora;
+        minutos = minutos < 10 ? "0" + minutos : minutos;
+        segundos = segundos < 10 ? "0" + segundos : segundos;
+
+        // Actualizar el contenido de las etiquetas con la fecha y hora actual
+        document.getElementById("fecha").innerHTML = dia + "/" + mes + "/" + anio;
+        document.getElementById("hora").innerHTML = hora + ":" + minutos + ":" + segundos;
+
+        // Actualizar la fecha y hora cada segundo
+        setTimeout(actualizarFechaHora, 1000);
+      }
+
+      // Llamar a la función para la primera vez
+      actualizarFechaHora();
+    </script>
+      </fieldset>
+
+      <fieldset>
+        <legend>Preguntas de respuesta Sí/No</legend>
+        <label for="pregunta1">1. <strong>¿He realizado mi análisis de riesgos ASST y tengo claro e implementado los controles a tener en cuenta?</strong></label>
+        <label><input type="radio" name="opciones1" value="si"> Sí</label>
+                <label><input type="radio" name="opciones1" value="no"> No </label>
+        <br><br>
+        <label for="pregunta2">2. <strong>¿Físicamente me siento en condiciones de realizar mis tareas?</strong></label>
+        <input type="radio" name="opciones2" value="si"> Sí </label>
+                <label><input type="radio" name="opciones2" value="no"> No </label>
+        <br><br>
+        <label for="pregunta3">3. <strong>¿He realizado el Documento de atencion equipo en campo ?</strong></label>
+               <label><input type="radio" name="opciones3" value="si"> Sí </label>
+                <label><input type="radio" name="opciones3" value="no"> No </label>
+                <br><br>
+        <label for="pregunta4">4. <strong>Tengo Claro la Hora de la voladura en campo y el sitio ?</strong></label>
+        <label><input type="radio" name="opciones4" value="si"> Sí </label>
+                <label><input type="radio" name="opciones4" value="no"> No</label>
+                <br><br>
+               <label for="pregunta5">5. <strong>He diligenciado el permiso de trabajo en altura ?</strong></label>
+               <label><input type="radio" name="opciones5" value="si"> Sí </label>
+                <label><input type="radio" name="opciones5" value="no"> No </label>
+                <br><br>
+      
+                <h3>Subir/Tomar foto </h3>
+                <input type="file" id="foto" name="foto"><br><br>
+      
+      <img id="foto-cargada"><br><br>
+      
+      <h3>Enviar / Finalizar</h3>
+      <input type="button" value="Enviar para aprobar" onclick="window.print()">
+         
+                </fieldset>
+    </form>
+
+    <script>
+      const inputFoto = document.querySelector('#foto');
+      const imgFoto = document.querySelector('#foto-cargada');
+
+      inputFoto.addEventListener('change', () => {
+        const file = inputFoto.files[0];
+        const reader = new FileReader();
+        reader.onload = (event) => {
+          imgFoto.src = event.target.result;
+        };
+        reader.readAsDataURL(file);
+      });
+    </script>
+  </body>
+</html>
